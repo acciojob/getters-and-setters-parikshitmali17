@@ -1,42 +1,43 @@
-//complete this code
 class Person {
-	constructor(name, age){
-		this.name=name;
-		this.age=age
-	}
+  constructor(name, age) {
+    this._name = name;  // Using _name instead of name to avoid recursion
+    this._age = age;    // Using _age instead of age
+  }
 
-	get name(){
-		return this.name
-	}
+  // Getter for name
+  get name() {
+    return this._name;
+  }
 
-	get age(){
-		return this.age
-	}
-	set age(newAge){
-		return this.age=newAge
-	}
+  // Getter for age
+  get age() {
+    return this._age;
+  }
+
+  // Setter for age
+  set age(newAge) {
+    this._age = newAge;
+  }
 }
 
 class Student extends Person {
-	constructor (name,age){
-		super(name,age)
-		
-	}
+  constructor(name, age) {
+    super(name, age);
+  }
 
-	study(){
-		console.log(`{${name}+ is studying}`)
-	}
-
-	
+  study() {
+    console.log(`${this.name} is studying`);  // Fixed name reference
+  }
 }
 
 class Teacher extends Person {
-	constructor(name, age){
-		super(name,age)
-	}
-	teach(){
-		console.log(`{${name}+ is teaching}`)
-	}
+  constructor(name, age) {
+    super(name, age);
+  }
+
+  teach() {
+    console.log(`${this.name} is teaching`);  // Fixed name reference
+  }
 }
 
 // Do not change the code below this line

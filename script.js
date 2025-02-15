@@ -9,8 +9,8 @@ class Person {
 		return name
 	}
 
-	setage(newAge){
-		age=newAge
+	setage(newage){
+		this.age=newage
 	}
 }
 
